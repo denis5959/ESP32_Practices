@@ -1,0 +1,30 @@
+
+const byte LED_GPIO = 14;
+const byte BUTTON_GPIO = 25;
+
+// variables will change:
+int buttonState = 0;         // variable for reading the pushbutton status
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_GPIO as an output.
+  pinMode(LED_GPIO, OUTPUT);
+
+  // initialize the pushbutton pin as an input:
+  pinMode(BUTTON_GPIO, INPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  // read the state of the pushbutton value:
+  buttonState = digitalRead(BUTTON_GPIO);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    // turn LED on:
+    digitalWrite(LED_GPIO, HIGH);
+  } else {
+    // turn LED off:
+    digitalWrite(LED_GPIO, LOW);
+  }
+}
